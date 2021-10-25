@@ -1,0 +1,23 @@
+{
+  "name": "@btc-price/main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "front": "npm start -w @btc-price/front",
+    "back": "npm start -w @btc-price/back",
+    "test-front": "npm test -w @btc-price/front",
+    "test-back": "npm test -w @btc-price/back"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "workspaces": [
+    "front",
+    "back"
+  ],
+  "devDependencies": {
+    "typescript": "^4.4.4",
+    "@types/node": "^16.11.4"
+  }
+}
