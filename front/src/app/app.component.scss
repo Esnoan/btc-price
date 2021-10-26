@@ -1,5 +1,7 @@
 @import 'app';
 
-main {
-  background-color: $red;
+.main-container {
+  margin: 0 auto;
+  margin-top: 1rem;
+  @include content-width;
 }

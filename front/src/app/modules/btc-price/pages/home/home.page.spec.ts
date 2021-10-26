@@ -21,4 +21,13 @@ describe('HomePage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(HomePage);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.main-header h1')?.textContent).toContain(
+      'Bitcoin'
+    );
+  });
 });
