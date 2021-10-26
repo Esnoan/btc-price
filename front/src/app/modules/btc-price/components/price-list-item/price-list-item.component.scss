@@ -1,0 +1,17 @@
+@import 'app';
+
+.price-list-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  border: 1px solid transparent;
+  border-radius: 0.35rem;
+  padding: 1rem 0.8rem;
+  color: $gray;
+  @include font-medium;
+  &:hover {
+    cursor: pointer;
+    border: 1px solid #f8b868;
+    box-shadow: 0px 10px 20px 9px rgba(248, 178, 90, 0.1);
+  }
+}

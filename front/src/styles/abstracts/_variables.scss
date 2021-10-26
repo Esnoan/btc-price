@@ -1,1 +1,35 @@
 $red: red;
+$black: #232637;
+$gray: #666d8f;
+
+$color-primary: #faa916;
+$color-black: #050517;
+$color-white: #fff;
+
+$grid-columns: 12;
+$grid-gutter-width: 3rem;
+
+$breakpoints: (
+  xs: 440px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+);
+
+/* Breakpoints */
+$small: 440px; /*-------- Mobile devices*/
+$s-medium: 570px; /*-------- Tablet devices*/
+$medium: 768px;
+$large: 960px;
+$x-large: 1060px; /*-------- Desktop devices*/
+$xx-large: 1250px;
+$xxx-large: 1440px;
+$high-quality: 1700px;
