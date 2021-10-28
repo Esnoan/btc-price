@@ -2,24 +2,17 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { PriceModel } from 'src/app/shared/models/PriceModel';
-import { PricesModel } from 'src/app/shared/models/PricesModel';
+import { ExchangeModel } from 'src/app/shared/models/ExchangeModel';
 
 @Injectable({
   providedIn: 'root',
 })
-export class PricesService {
+export class ExchangeService {
   constructor(private _http: HttpClient) {}
 
-  getBTCPrice(): Observable<PriceModel> {
+  getLastExchangeRates(): Observable<ExchangeModel> {
     return this._http
-      .get<PriceModel>('/api/btc/price')
-      .pipe(catchError(this.handleError));
-  }
-
-  getBTCPrices(): Observable<PricesModel[]> {
-    return this._http
-      .get<PricesModel[]>('/api/btc/prices')
+      .get<ExchangeModel>('/api/exchange/USD')
       .pipe(catchError(this.handleError));
   }
 
