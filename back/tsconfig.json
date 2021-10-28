@@ -11,6 +11,10 @@
     "emitDecoratorMetadata": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*"],
+  "include": [
+    "src/**/*",
+    "tests/test.controller.test.ts",
+    "tests/btc-price.controller.test.ts"
+  ],
   "exclude": ["src/**/*.test.ts"]
 }

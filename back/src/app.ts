@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import swaggerUi from 'swagger-ui-express';
 
 import { router } from './routes';
 
@@ -28,12 +27,5 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.use('/api', router);
-
-// implements swagger for docs
-app.use('/api-docs', swaggerUi.serve, async (_req: Request, res: Response) => {
-  return res.send(
-    swaggerUi.generateHTML(await import('../build/swagger.json'))
-  );
-});
 
 export default app;
