@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PricesService } from 'src/app/core/services/prices/prices.service';
-import { Prices } from 'src/app/shared/types/prices.types';
+import { PricesModel } from 'src/app/shared/models/PricesModel';
 
 @Component({
   selector: 'app-price-list',
@@ -8,11 +8,13 @@ import { Prices } from 'src/app/shared/types/prices.types';
   styleUrls: ['./price-list.component.scss'],
 })
 export class PriceListComponent implements OnInit {
-  priceList: Prices[] = [];
+  priceList: PricesModel[] = [];
 
   constructor(private _pricesService: PricesService) {}
 
   ngOnInit(): void {
-    this.priceList = this._pricesService.getPrices();
+    this._pricesService.getBTCPrices().subscribe((prices) => {
+      this.priceList = prices.reverse();
+    });
   }
 }

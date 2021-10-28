@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PricesService } from 'src/app/core/services/prices/prices.service';
+import { PriceModel } from 'src/app/shared/models/PriceModel';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  constructor() {}
+  price: PriceModel = { USD: 0, EUR: 0, COP: 0 };
 
-  ngOnInit(): void {}
+  constructor(private _pricesService: PricesService) {}
+
+  ngOnInit(): void {
+    this._pricesService.getBTCPrice().subscribe((price) => {
+      this.price = price;
+    });
+  }
 }

@@ -7,15 +7,17 @@ import { PriceListItemComponent } from './components/price-list-item/price-list-
 import { PriceListComponent } from './components/price-list/price-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { PricesService } from 'src/app/core/services/prices/prices.service';
+import { CoreModule } from 'src/app/core/core.module';
+import { ExchangeService } from 'src/app/core/services/exchange/exchange.service';
 
 @NgModule({
-  providers: [PricesService],
+  providers: [PricesService, ExchangeService],
   declarations: [
     HomePage,
     DetailPage,
     PriceListItemComponent,
     PriceListComponent,
   ],
-  imports: [CommonModule, BTCPriceRoutingModule, SharedModule],
+  imports: [CommonModule, BTCPriceRoutingModule, SharedModule, CoreModule],
 })
 export class BtcPriceModule {}

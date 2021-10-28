@@ -1,4 +1,4 @@
 <section class="price-list-item" (click)="onClick()">
-  <span>{{ price.date }}</span>
-  <span>$ {{ price.price }}</span>
+  <span>{{price.time * 1000 | date:'mediumDate':'GMT' }}</span>
+  <span>{{price.value |currency:'USD'}}</span>
 </section>

@@ -21,4 +21,9 @@ const getPricesURL = (
   return `${BASE_URL}/v2/histoday?fsym=${crypto}&tsym=${currency}&limit=${days}&toTs=-1&api_key=${apiKey}`;
 };
 
-export { getPriceURL, getPricesURL };
+const getUSDExchangeRateURL = () => {
+  const apiKey = process.env.API_KEY_EXCHANGE;
+  return `https://freecurrencyapi.net/api/v2/latest?apikey=${apiKey}`;
+};
+
+export { getPriceURL, getPricesURL, getUSDExchangeRateURL };

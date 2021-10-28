@@ -5,9 +5,9 @@
 
   </section>
   <section class="main-content">
-    <p>$2,827.00 <span>USD</span> </p>
-    <p>$2,827.00 <span>EUR</span> </p>
-    <p>$2,827.00 <span>COP</span> </p>
+    <p>{{ price.USD | currency:'USD' }} </p>
+    <p>{{ price.EUR | currency:'EUR'}} </p>
+    <p>{{ price.COP | currency:'COP'}} </p>
 
   </section>
 
