@@ -13,7 +13,7 @@ dotenv.config();
 const app = express();
 
 // app config
-app.set('port', process.env.SERVER_PORT);
+app.set('port', process.env.SERVER_PORT ?? '3011');
 
 // app middleware
 app.use(helmet());

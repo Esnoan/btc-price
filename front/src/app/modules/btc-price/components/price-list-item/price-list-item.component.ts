@@ -9,7 +9,7 @@ import { PricesModel } from 'src/app/shared/models/PricesModel';
 })
 export class PriceListItemComponent implements OnInit {
   @Input()
-  price: PricesModel = { time: 0, value: 0 };
+  price: PricesModel = new PricesModel(0, 0);
 
   constructor(private _router: Router) {}
 
@@ -17,7 +17,7 @@ export class PriceListItemComponent implements OnInit {
 
   onClick(): void {
     this._router.navigate(['btc-price/detail'], {
-      state: { price: this.price.value },
+      state: { price: this.price },
     });
   }
 }

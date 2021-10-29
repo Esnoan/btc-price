@@ -20,13 +20,13 @@ describe('BTC Price Routes', () => {
 
   describe('List BTC Prices', () => {
     test('Get default quantity prices', async () => {
-      const res = await request(app).get('/api/btc/prices').send();
+      const res = await request(app).post('/api/btc/prices').send();
       expect(res.statusCode).toBe(200);
       expect(res.body.USD).toBeUndefined();
       expect(res.body.length).toBe(10);
     });
 
-    test('Get prices with more quantity', async () => {
+    test('post prices with more quantity', async () => {
       const res = await request(app).get('/api/btc/prices').send({ days: 20 });
       expect(res.statusCode).toBe(200);
       expect(res.body.USD).toBeUndefined();

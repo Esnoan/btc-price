@@ -9,9 +9,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { PricesService } from 'src/app/core/services/prices/prices.service';
 import { CoreModule } from 'src/app/core/core.module';
 import { ExchangeService } from 'src/app/core/services/exchange/exchange.service';
+import { OnlineService } from 'src/app/core/services/online/online.service';
 
 @NgModule({
-  providers: [PricesService, ExchangeService],
+  providers: [PricesService, ExchangeService, OnlineService],
   declarations: [
     HomePage,
     DetailPage,

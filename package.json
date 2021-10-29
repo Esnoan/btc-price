@@ -2,12 +2,18 @@
   "name": "@btc-price/main",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "front": "npm start -w @btc-price/front",
     "back": "npm start -w @btc-price/back",
+    "build-front": "npm run build -w @btc-price/front",
+    "build-back": "npm run build -w @btc-price/back",
     "test-front": "npm test -w @btc-price/front",
-    "test-back": "npm test -w @btc-price/back"
+    "test-back": "npm test -w @btc-price/back",
+    "electron": "npm run build-back && npm run build-front && electron .",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +23,44 @@
     "back"
   ],
   "devDependencies": {
-    "typescript": "^4.4.4",
-    "@types/node": "^16.11.4"
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "@electron-forge/maker-deb": "^6.0.0-beta.61",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+    "@electron-forge/maker-zip": "^6.0.0-beta.61",
+    "@types/electron": "^1.6.10",
+    "@types/node": "^16.11.4",
+    "electron": "^15.3.0",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "@btc_price/main"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
   }
 }
