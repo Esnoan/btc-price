@@ -6,7 +6,6 @@ let appWin;
 
 createWindow = () => {
   var mainScreen = screen.getPrimaryDisplay();
-  console.log(mainScreen.size);
   appWin = new BrowserWindow({
     width: 500,
     height: mainScreen.size.height,

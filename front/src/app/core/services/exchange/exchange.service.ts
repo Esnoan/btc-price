@@ -50,8 +50,6 @@ export class ExchangeService {
       if (this.exchangeTable) {
         this.db.exchange.clear();
         exchange.id = nanoid();
-        console.log('to add');
-        console.log(exchange);
         await this.exchangeTable.add(exchange);
       }
     } catch (error) {

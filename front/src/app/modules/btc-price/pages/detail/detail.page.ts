@@ -29,8 +29,6 @@ export class DetailPage implements OnInit {
           this.getExchangeRate(value);
         } else {
           const exchange = await this._exchangeService.getExchanges();
-          console.log('exchange');
-          console.log(exchange);
           this.assignValues(value, exchange[0]);
         }
       });
