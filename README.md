@@ -18,14 +18,12 @@
    npm install
    ```
 
-3. Run the server.
-   ```sh
-   npm run back
-   ```
+3. Rename file `.env.example` to `.env` in `back` folder and assigns the apis keys
 
-4. Run the client.
+
+4. Run the electron.
    ```sh
-   npm run front
+   npm run electron
    ```
 
 
